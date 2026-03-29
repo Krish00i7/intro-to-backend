@@ -1,0 +1,27 @@
+{
+  "name": "into-to-backend",
+  "version": "1.0.0",
+  "description": "a tutorial for intro to backend",
+  "homepage": "https://github.com/Krish00i7/intro-to-backend#readme",
+  "bugs": {
+    "url": "https://github.com/Krish00i7/intro-to-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krish00i7/intro-to-backend.git"
+  },
+  "license": "ISC",
+  "author": "Krish",
+  "type": "module",
+  "main": "server/src/index.js",
+  "scripts": {
+    "start": "node server/src/index.js",
+    "dev": "nodemon server/src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.3",
+    "nodemon": "^3.1.14"
+  }
+}
