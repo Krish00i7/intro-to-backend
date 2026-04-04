@@ -13,5 +13,6 @@ userRouter.get("/:id", (req,res) => {
 
 userRouter.post("/", (req,res) => {
     res.send({title: 'Welcome to the User Router POST'});
-})
+});
+
 export default userRouter;
