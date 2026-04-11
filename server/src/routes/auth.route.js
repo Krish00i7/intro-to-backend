@@ -1,13 +1,14 @@
 import {Router} from "express";
 import {SignUp, SignIn} from "../controllers/auth.controller.js"
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 const authRouter = Router();
 
 authRouter.post('/sign-up', SignUp );
 
-authRouter.post('/sign-in', SignIn );
+authRouter.post('/sign-in', authMiddleware, SignIn );
 
-authRouter.post('/sign-out', (req,res) => res.send({title : 'Successfully signed out'}));
+authRouter.post('/sign-out', authMiddleware, (req,res) => res.send({title : 'Successfully signed out'}));
 
 export default authRouter;
 

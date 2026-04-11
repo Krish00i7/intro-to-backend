@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 import {JWT_SECRET, JWT_EXPIRES_IN} from '../config/env.js';
 import {User} from '../models/user_models.js';
 
-export const SignUp = async (req, res, next) => {
+export const SignUp = async (req, res) => {
     const session = await mongoose.startSession();
     session.startTransaction();
 
@@ -44,11 +44,11 @@ export const SignUp = async (req, res, next) => {
     }catch(error){
         await session.abortTransaction();
         session.endSession();
-        next(error);
+        throw error;
     }
 }
 
-export const SignIn = async(req, res, next) => {
+export const SignIn = async(req, res) => {
     try{
         const {email, password} = req.body;
 
@@ -79,7 +79,7 @@ export const SignIn = async(req, res, next) => {
             }
         })
     }catch(error){
-        next(error);
+        throw error;
     }
 }
 
